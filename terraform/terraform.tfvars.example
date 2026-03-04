@@ -1,0 +1,7 @@
+aws_region       = "us-east-1"
+environment      = "production"
+instance_type    = "t2.micro"
+key_pair_name    = "taskflow-key"
+private_key_path = "~/.ssh/taskflow-key.pem"
+allowed_ssh_cidr = "YOUR_IP/32"         # Replace with: curl ifconfig.me
+repo_url         = "https://github.com/YOUR_USERNAME/taskflow"

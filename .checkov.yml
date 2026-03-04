@@ -1,0 +1,21 @@
+# ═══════════════════════════════════════════════════════════════
+# Checkov — IaC Security Scanner Configuration
+# ═══════════════════════════════════════════════════════════════
+# Run: make checkov
+
+framework:
+  - terraform
+
+directory:
+  - terraform/
+
+# Skip checks that are expected for this assessment:
+skip-check:
+  - CKV_AWS_88 # EC2 instance has public IP (required — no VPC NAT)
+  - CKV_AWS_8 # Launch config has public IP (we use EIP)
+  - CKV2_AWS_19 # Detailed monitoring (costs money, not free tier)
+  - CKV_AWS_135 # EC2 detailed monitoring (not free tier)
+  - CKV_AWS_126 # EBS optimized (t2.micro doesn't support it)
+
+compact: true
+quiet: true
