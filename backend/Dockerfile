@@ -42,6 +42,7 @@ COPY --from=builder /wheels /wheels
 RUN pip install --no-cache /wheels/*
 
 COPY --chown=app:app . .
+RUN mkdir -p /app/staticfiles /app/media && chown -R app:app /app/staticfiles /app/media
 RUN chmod +x entrypoint.sh
 
 USER app
