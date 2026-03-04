@@ -21,6 +21,7 @@ output "s3_bucket_arn" {
 output "ssh_command" {
   description = "SSH command to connect to the instance"
   value       = "ssh -i ${var.private_key_path} ubuntu@${aws_eip.app.public_ip}"
+  sensitive   = true
 }
 
 output "app_url" {
@@ -35,6 +36,7 @@ output "iam_role_arn" {
 
 output "deployment_summary" {
   description = "Deployment summary with all connection details"
+  sensitive   = true
   value       = <<-EOT
 
 ╔══════════════════════════════════════════════════════════╗

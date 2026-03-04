@@ -1,6 +1,6 @@
 resource "aws_iam_role" "ec2_role" {
   name        = "taskflow-ec2-role-${var.environment}"
-  description = "IAM role for TaskFlow EC2 instance — S3 access only"
+  description = "IAM role for TaskFlow EC2 instance - S3 access only"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"

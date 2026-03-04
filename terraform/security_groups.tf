@@ -1,6 +1,6 @@
 resource "aws_security_group" "ec2" {
   name        = "taskflow-ec2-sg-${var.environment}"
-  description = "Security group for TaskFlow EC2 — only 80, 443, and restricted SSH"
+  description = "Security group for TaskFlow EC2 - only 80, 443, and restricted SSH"
 
   ingress {
     description = "HTTP traffic"
@@ -19,7 +19,7 @@ resource "aws_security_group" "ec2" {
   }
 
   ingress {
-    description = "SSH — RESTRICTED. Set allowed_ssh_cidr in tfvars to your IP."
+    description = "SSH - restricted to allowed IP"
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
